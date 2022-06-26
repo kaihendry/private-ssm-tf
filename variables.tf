@@ -2,7 +2,7 @@ variable "default_tags" {
   type        = map(string)
   description = "Map of default tags to apply to resources"
   default = {
-    project = "ssm-test"
+    project = "private-ssm-tf"
   }
 }
 

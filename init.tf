@@ -6,7 +6,7 @@ terraform {
     }
   }
 
-# https://app.terraform.io/app/webc/workspaces/cli/settings/general
+  # https://app.terraform.io/app/webc/workspaces/cli/settings/general
   cloud {
     organization = "webc"
 
