@@ -6,6 +6,7 @@ resource "aws_vpc_endpoint" "ssm" {
   service_name        = "com.amazonaws.${var.region}.ssm"
   vpc_endpoint_type   = "Interface"
   private_dns_enabled = true
+  security_group_ids  = [aws_security_group.all.id]
 }
 
 resource "aws_vpc_endpoint" "ec2messages" {
@@ -13,6 +14,7 @@ resource "aws_vpc_endpoint" "ec2messages" {
   service_name        = "com.amazonaws.${var.region}.ec2messages"
   vpc_endpoint_type   = "Interface"
   private_dns_enabled = true
+  security_group_ids  = [aws_security_group.all.id]
 }
 
 resource "aws_vpc_endpoint" "ssmmessages" {
@@ -20,6 +22,7 @@ resource "aws_vpc_endpoint" "ssmmessages" {
   service_name        = "com.amazonaws.${var.region}.ssmmessages"
   vpc_endpoint_type   = "Interface"
   private_dns_enabled = true
+  security_group_ids  = [aws_security_group.all.id]
 }
 
 

@@ -1,15 +1,26 @@
+data "aws_ami" "amazon_linux" {
+  most_recent = true
+  owners      = ["amazon"]
+
+  filter {
+    name   = "name"
+    values = ["amzn-ami-hvm-*-x86_64-gp2"]
+    # values = ["amzn-ami-*-amazon-ecs-optimized"]
+  }
+}
+
 module "ec2_instance" {
   source  = "terraform-aws-modules/ec2-instance/aws"
   version = "~> 3.0"
 
   name = "ec2-${var.stage}-${var.owner}-test"
 
-  ami                    = "ami-0c802847a7dd848c0"
+  ami                    = data.aws_ami.amazon_linux.id
   instance_type          = "t3.nano"
   iam_instance_profile   = aws_iam_instance_profile.session_manager.name
   subnet_id              = var.subnets[0]
-  vpc_security_group_ids = [aws_security_group.all.id, "sg-751f423f"]
-  key_name               = var.owner
+  vpc_security_group_ids = [aws_security_group.all.id]
+  # key_name               = var.owner
 
 }
 
