@@ -27,9 +27,6 @@ variable "stage" {
   default     = "dev"
 }
 
-variable "security_groups" {
-}
-
 variable "subnets" {
 }
 
