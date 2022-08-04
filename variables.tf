@@ -27,7 +27,8 @@ variable "stage" {
   default     = "dev"
 }
 
-variable "subnets" {
+variable "private_subnet_id" {
+  description = "Private subnet ID"
 }
 
 variable "vpc_id" {}
