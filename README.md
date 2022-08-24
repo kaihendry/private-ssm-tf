@@ -14,3 +14,7 @@ be patient for the Session Manager to offer a Connect button!
 https://aws.amazon.com/premiumsupport/knowledge-center/ec2-systems-manager-vpc-endpoints/
 
 If the instance does not have Internet connectivity, i.e. ssm.region.amazonaws.com is unreachable, you must setup VPC endpoints.
+
+# Makefile
+
+You can use the Makefile as inspiration for overriding the S3 backend config.
